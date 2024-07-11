@@ -1,0 +1,69 @@
+/*Aqui vamos adapitar a pagna para varios dispositivos tudo que estilizarmos aqui é para telas menores que 769*/
+@media (max-width: 769px) { /*A partir de qual tamanho de tela eu quero aplicar novos estilos*/
+    main::after {
+        background: linear-gradient(0deg, #000 20%, rgba(0, 0,
+                    0, 0.00) 65%) no-repeat;
+        width: 100vw;
+    }
+
+    main .personagem .imagem {
+        height: 85%;
+        /*Altura*/
+    }
+
+
+    .conteudo { /*É a div onde estão logo, nome-personagem, decrição */
+        justify-content: flex-end; /*Vai posicionar lá em baixo*/
+        left: 0; /*Posicionar a esquerda*/
+        top: -20%; /*Subir 20%*/
+        max-width: 100vw; /*Largura*/
+        padding: 30px; /*Decolando das bordas*/
+    }
+
+    .conteudo .nome-personagem {
+        font-size: 36px;
+    }
+
+    .conteudo .descricao {
+        max-width: 500px; /*Vai fica limitado ao maximo de 500px */
+    }
+
+    .botoes {
+        flex-direction: row;
+        align-items: end; /*Colocando os botões na parte de baixo da tela*/
+        width: 100%; /*Largura - os botoões vão ocupar todo o tamanho que ele tem para ocupar na parte de baixo */
+        padding: 60px; /*Descolando os botões da parte de baixo*/
+    }
+
+    .botoes .botao img { /*img dos botões*/
+        max-width: 80px; /*Diminuindo as imgs dos botões*/
+    }
+}
+
+@media (max-width: 425px) { /* Tela de celular menor ainda*/
+    mais .personagem .imagem {
+        height: auto;
+    }
+
+    .conteudo .logo {
+        width: 170px;
+        height: 75px;
+    }
+
+    .conteudo {
+        top: -30%;
+    }
+
+    .conteudo .nome-personagem {
+        font-size: 24px;
+    }
+
+    .botoes {
+        padding: 20px;
+        top: -20%;
+    }
+
+    .botoes .botao img {
+        max-width: 50px;
+    }
+}

@@ -1,0 +1,101 @@
+body {
+    background-color: #000000;
+    overflow: hidden; /*Tirando a rolagem vertical do site - tirando tudo que está sobrando*/
+}
+
+main::after { /*Colocando o degrade e aplicando mais um elemento extra no main
+    pelo CSS e não no html */
+    content: ""; /*Aqui podemos colocar um texto ou emoji*/
+    position: fixed; /*deica o elemento fixo na tela*/
+    top: 0; /*manda para cima*/
+    left: 0; /*deixar sempre a esquerda*/
+    min-height: 100vh; /*Ocupa o lado esquerdo 100vh de altuda*/
+    width: 80vw; /*Largura no nosso elemento deixamos 20 para o menu ocupar depois*/
+    background: linear-gradient(-233deg, #000 40%, rgba(0, 0, 
+    0, 0) 65%) no-repeat; /*Para criar e montar o proprio degrade ir no site CSS Gradient*/
+}
+
+main .personagem {
+    display: none; /*Escondendo todas as img*/
+    height: 100vh; /*vh unidade de medida ocupa 100% do tamanho de altura*/
+}
+
+main .personagem.selecionado {
+    display: block; /*Mostrando a primeira img somente ela*/
+}
+
+main .personagem .imagem {
+    width: 100%; /*Largura da img em relação a tela do site*/
+    height: 100%; /*Altura da img em relação a tela do site*/
+    object-fit: cover; /*agora a img não fica mais distorcida ou estourando*/
+}
+
+.conteudo { /*São as descrições dos personagens*/ 
+    position: absolute;
+    top: 0;
+    left: 120px; /*colocando as descrições para direita dando um espaço*/
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    max-width: 380px;
+    z-index: 1; /*Aqui queremos que esse eixo de conteudo fique por cima já que no 
+    ::after o degrade tinha ficado por cima do logo e das descrições usamos
+    z-index: 1; para dar prioridade*/
+}
+
+.conteudo .nome-personagem {
+    color: #ffffff; /*Cor das letras cor da descrição*/
+    font-size: 48px; /*Tamanho das letras tamanho da fonte*/
+    font-family: "secular One"; /*Fonte que pegamos e linkamos no html*/
+    font-weight: 400; /*Peso da fonte que baixamos e linkamos no html*/
+    margin-bottom: 20px; /*Cria um espaçamento entre os elementos no nosso 
+    caso as descrições e bottom é para dizer que é só em baixo*/
+}
+
+.conteudo .descricao {
+    color: #ffffff; /*Cor das letras cor da descrição*/
+    font-family: "Rubik"; /*Fonte que pegamos e linkamos no html*/
+    font-size: 19px; /*Tamanho das letras*/
+    line-height: 24px; /*Altura entre as linhas*/
+}
+
+.conteudo .logo {
+    background-image: url(../img/one-piece-logo.png); /*Pegando uma img no caso o logo usando url(../)*/
+    background-size: cover; /*Cobrir a area*/
+    height: 100px; /*Altura para o logo*/
+    width: 230px; /*largura para o logo*/
+    margin-bottom: 35px; /*Cria um espaçamento entre os elementos nesse caso o logo e bottom é para dizer que é só em baixo*/
+}
+
+.botoes {
+    position: fixed;
+    top: 0;
+    right: 0; /*Colocamos os botoes na direita*/
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 180px;
+    justify-content: center; /*Colocando todos no centro*/
+    align-items: center;
+    gap: 10px; /*Dando um espaçamento entre os botões*/
+    background-color: rgba(0, 0, 0, 0.3); /*opacidade*/
+}
+
+.botoes .botao {
+    border: none; /*Tirando a borda dos botões*/
+    background: #000000; /*Tirando o fundo dos botões*/
+    cursor: pointer; /*colocando a mãozinha*/
+    border-radius: 50%;
+}
+
+.botoes .botao img { /*Aqui vamos aredondar as img dos botões*/
+    border-radius: 50%;
+}
+
+.botoes .botao.selecionado { /*aquando selecionar o personagem o botão vai
+    ficar destacado um pouco maior com um estilo diferente*/
+    transform: scale(1.2);
+    box-shadow: 0 0 10px #d9d9d9; /*colocando uma borda/sombra quando destacar o botão*/
+}
